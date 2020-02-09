@@ -12,9 +12,7 @@ const appOptions = [
 ];
 
 const cols = ["userId", "id", "title", "body"];
-const options = {
-    filterType: 'textField',
-  };
+
 
 
 
@@ -54,27 +52,7 @@ class Parameters extends React.Component {
                 results: posts
             })
         })
-
-  
-    /*this.setState({loading:true, error: null});
-    try{
-        await api.badges.create(this.state.form);
-        this.setState({loading:false, error: null});
-        this.props.history.push('/badges');
     }
-    catch(error){
-        this.setState({
-            loading: false,
-            error : error
-        })
-         <!-- Datatable options={this.state.table} -->
-    }*/
-    }
-
-    componentDidMount(){
-        
-    }
-
 
     handleClean = e =>{
      this.setState({
@@ -82,8 +60,24 @@ class Parameters extends React.Component {
      });
         
     }
-  render() {
 
+    sendDetail = (rowData) =>{
+        console.log('Estoy aqui');
+        console.log(rowData);
+        console.log("Id "+rowData[0]);
+        this.props.history.push({
+            pathname: `/parameters/${rowData}`,
+            data: rowData // your data array of objects
+          })
+    }
+
+  render() {
+    const options = {
+        selectableRows: true,
+        onRowClick: (rowData, rowState) => {
+            this.sendDetail(rowData);      
+          },
+      };
     return (
      <React.Fragment>
     <div className="Parameters__container">
