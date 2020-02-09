@@ -1,0 +1,31 @@
+
+
+  
+  .Parameters__container {
+    margin:  auto;
+    padding: 0 1rem;
+  }
+  
+ 
+  
+  .Parameters__buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+  }
+
+  .button__div{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .Datatable{
+    margin-top: 20px;
+    height: auto;
+    width: auto;
+    display: flex;
+  }
+
+  .Limpiar{
+    margin: 10px;
+  }
